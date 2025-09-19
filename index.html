@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindMate AI - Your AI Mental Wellness Companion</title>
+    <meta name="description" content="MindMate AI offers AI-powered mental wellness support with CBT techniques, mood tracking, and self-care tools for better mental health.">
+    <meta name="keywords" content="AI mental health, CBT therapy, mood tracking, meditation, self-care, wellness app">
+    <meta name="author" content="MindMate AI">
+    <meta property="og:title" content="MindMate AI - Your AI Mental Wellness Companion">
+    <meta property="og:description" content="AI-powered mental wellness support with CBT techniques, mood tracking, and self-care tools.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mindmate.ai">
+    <meta property="og:image" content="https://mindmate.ai/images/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MindMate AI - Mental Wellness Companion">
+    <meta name="twitter:description" content="AI-powered mental wellness support with CBT techniques and mood tracking.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Banner */
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .banner-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(74, 124, 89, 0.6);
+        }
+        
+        .banner-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            width: 80%;
+            max-width: 800px;
+        }
+        
+        .banner-content h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .banner-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .banner-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            padding: 14px 30px;
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .cta-btn.primary {
+            background: #5d8aa8;
+        }
+        
+        .cta-btn.secondary {
+            background: #4a7c59;
+        }
+
+        /* About Section */
+        .about {
+            background-color: white;
+            padding: 80px 10%;
+            text-align: center;
+        }
+        
+        .about h2 {
+            font-size: 2.5rem;
+            color: #4a7c59;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .about p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 10%;
+            background: #f0f4f0;
+            text-align: center;
+        }
+        
+        .features h2 {
+            font-size: 2.5rem;
+            color: #4a7c59;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .features > p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .feature-item {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: #4a7c59;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .feature-item h3 {
+            color: #4a7c59;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        
+        .feature-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Chat Section */
+        .chat-section {
+            padding: 80px 10%;
+            background: white;
+            text-align: center;
+        }
+
+        .chat-section h2 {
+            font-size: 2.2rem;
+            color: #4a7c59;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .chat-section p {
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .chat-btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background: #4a7c59;
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* Community & Blog Section */
+        .community-blog {
+            padding: 80px 10%;
+            background-color: #f0f4f0;
+        }
+        
+        .cb-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .cb-block {
+            position: relative;
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .cb-block img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .cb-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .cb-overlay h3 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .cb-btn {
+            padding: 12px 25px;
+            background: white;
+            color: #4a7c59;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 5%;
+            background-color: white;
+            text-align: center;
+        }
+        
+        .testimonials h2 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #4a7c59;
+            margin-bottom: 10px;
+        }
+        
+        .testimonials h3 {
+            font-size: 2.2rem;
+            color: #4a7c59;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .testimonials > p {
+            max-width: 600px;
+            margin: 0 auto 50px;
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        .testimonials-container {
+            overflow: hidden;
+            width: 100%;
+        }
+        
+        .testimonials-track {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 200%;
+        }
+        
+        .testimonial-page {
+            display: flex;
+            flex: 0 0 50%;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+        
+        .testimonial-card {
+            background: #f8f8f8;
+            border-radius: 8px;
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+            border-left: 3px solid #4a7c59;
+        }
+        
+        .testimonial-icon {
+            width: 40px;
+            height: 40px;
+            background: #4a7c59;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            margin: 0 auto 20px;
+        }
+        
+        .testimonial-text {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 15px;
+            display: block;
+        }
+        
+        .testimonial-name {
+            font-weight: 600;
+            color: #4a7c59;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .testimonial-role {
+            color: #5d8aa8;
+            font-size: 14px;
+        }
+        
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            gap: 15px;
+        }
+        
+        .carousel-btn {
+            background: #4a7c59;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+        
+        .carousel-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 8px;
+        }
+        
+        .carousel-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+        }
+        
+        .carousel-indicator.active {
+            background: #4a7c59;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .banner-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .banner-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-page {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cb-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <img src="Images/logo.png" alt="MindMate AI Logo" class="logo">
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="community.html">Community</a></li>
+        </ul>
+        <a href="product.html" class="cta">Chat To MindMate</a>
+    </nav>
+
+    <!-- Banner -->
+    <section class="banner">
+        <img src="Images/Banner.jpg" alt="MindMate AI Banner" class="banner-image">
+        <div class="banner-overlay"></div>
+        <div class="banner-content">
+            <h1>Welcome to MindMate AI</h1>
+            <p>Your AI-powered partner for mental wellness and productivity.</p>
+            <div class="banner-buttons">
+                <a href="#about" class="cta-btn primary">Explore Features</a>
+                <a href="product.html#chatbot-section" class="cta-btn secondary">Chat with MindMate</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About MindMate AI</h2>
+        <p>
+            MindMate AI is your personal wellness companion. Built with AI, it helps you track your mood, chat with a CBT-trained bot, practice guided meditations, and set self-care goals. Whether you're a student, remote worker, or just looking to improve your mental health, MindMate AI makes self-care simple, accessible, and empowering.
+        </p>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2>Features & Benefits</h2>
+        <p>MindMate AI combines Cognitive Behavioural Therapy (CBT), AI-powered coaching, and guided self-care tools to support your mental wellness journey.</p>
+        
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>CBT-Powered Chatbot</h3>
+                <p>Get instant support through conversations with an AI trained in Cognitive Behavioural Therapy, helping you manage stress and reframe negative thoughts.</p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Mood Tracking</h3>
+                <p>Track your daily moods and receive personalized insights that highlight patterns, helping you stay aware of your mental wellbeing.</p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-spa"></i>
+                </div>
+                <h3>Self-Care Guidance</h3>
+                <p>Access tailored tips, routines, and wellness exercises designed to support your personal growth and everyday balance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat with AI Section -->
+    <section class="chat-section">
+        <h2>Talk to MindMate the AI Bot</h2>
+        <p>
+            Need someone to listen? MindMate is always here. Our AI-powered bot uses CBT techniques to offer supportive, judgment-free conversations whenever you need them. Whether you're feeling stressed, anxious, or just need a quick mental boost, MindMate is ready to help you feel better in the moment.
+        </p>
+        <a href="product.html#chatbot-section" class="chat-btn">Chat with MindMate</a>
+    </section>
+
+    <!-- Community & Blog Section -->
+    <section class="community-blog">
+        <div class="cb-container">
+            <div class="cb-block">
+                <img src="Images/Community.png" alt="Join the MindMate Community">
+                <div class="cb-overlay">
+                    <h3>Join Our Community</h3>
+                    <a href="community.html" class="cb-btn">Join Community</a>
+                </div>
+            </div>
+            <div class="cb-block">
+                <img src="Images/Blog.png" alt="MindMate Blog">
+                <div class="cb-overlay">
+                    <h3>Explore Our Blog</h3>
+                    <a href="blog.html" class="cb-btn">Visit Blog</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>Testimonials</h2>
+        <h3>What Our Clients Say</h3>
+        <p>We take pride in our service and the relationships we build with our clients. Here's what they have to say about their experience with us.</p>
+        
+        <div class="testimonials-container">
+            <div class="testimonials-track">
+                <!-- Page 1 -->
+                <div class="testimonial-page">
+                    <div class="testimonial-card">
+                        <div class="testimonial-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">"MindMate feels like a safe space in my pocket. Talking to the AI bot helps me calm down after stressful days at varsity."</p>
+                        <img src="Images/meg.jpg" alt="Megan Johnston" class="testimonial-avatar">
+                        <h4 class="testimonial-name">Megan Johnston</h4>
+                        <p class="testimonial-role">Marketing Director</p>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">"At first I was skeptical, but the chatbot is surprisingly supportive. It helped me reframe some negative thoughts I didn't even notice I had."</p>
+                        <img src="Images/durell.jpg" alt="Durell Jardim" class="testimonial-avatar">
+                        <h4 class="testimonial-name">Durell Jardim</h4>
+                        <p class="testimonial-role">Software Engineer</p>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">"I love the mood tracking! Seeing my progress week by week reminds me that I'm actually doing better than I think."</p>
+                        <img src="Images/asanda.jpg" alt="Asanda" class="testimonial-avatar">
+                        <h4 class="testimonial-name">Asanda</h4>
+                        <p class="testimonial-role">Business Owner</p>
+                    </div>
+                </div>
+                
+                <!-- Page 2 -->
+                <div class="testimonial-page">
+                    <div class="testimonial-card">
+                        <div class="testimonial-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">"The meditation guides have helped me establish a daily mindfulness practice that I actually look forward to."</p>
+                        <img src="Images/junior.jpeg" alt="Junior" class="testimonial-avatar">
+                        <h4 class="testimonial-name">Junior</h4>
+                        <p class="testimonial-role">Graphic Designer</p>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">"As someone with anxiety, MindMate has been a game-changer. The CBT techniques really work for managing my symptoms."</p>
+                        <img src="Images/kgabo.jpg" alt="Kgabo" class="testimonial-avatar">
+                        <h4 class="testimonial-name">Kgabo</h4>
+                        <p class="testimonial-role">Teacher</p>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">"The community feature connected me with others who understand what I'm going through. It's nice to not feel alone."</p>
+                        <img src="Images/kat.jpg" alt="Katlego Raletsemo" class="testimonial-avatar">
+                        <h4 class="testimonial-name">Katlego Raletsemo</h4>
+                        <p class="testimonial-role">Student</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="carousel-controls">
+            <button class="carousel-btn prev-btn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-btn next-btn">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <div class="carousel-indicators">
+            <div class="carousel-indicator active" data-index="0"></div>
+            <div class="carousel-indicator" data-index="1"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 MindMate AI</p>
+        
+        <div class="social-icons">
+            <a href="https://www.instagram.com/stadio_higher_ed/?hl=en" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/stadio_highered?lang=en" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/STADIOHigherEducation/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        
+        <p>Contact us at <a href="mailto:support@mindmate.ai">support@mindmate.ai</a></p>
+    </footer>
+
+    <!-- Mobile menu functionality -->
+    <script src="script.js"></script>
+    <script>
+        
+        // Carousel functionality
+        const track = document.querySelector('.testimonials-track');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        const indicators = document.querySelectorAll('.carousel-indicator');
+        
+        let currentPage = 0;
+        const totalPages = 2;
+        
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentPage * 50}%)`;
+            
+            indicators.forEach((indicator, index) => {
+                if (index === currentPage) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+            
+            prevBtn.disabled = currentPage === 0;
+            nextBtn.disabled = currentPage === totalPages - 1;
+        }
+        
+        nextBtn.addEventListener('click', function() {
+            if (currentPage < totalPages - 1) {
+                currentPage++;
+                updateCarousel();
+            }
+        });
+        
+        prevBtn.addEventListener('click', function() {
+            if (currentPage > 0) {
+                currentPage--;
+                updateCarousel();
+            }
+        });
+        
+        indicators.forEach(indicator => {
+            indicator.addEventListener('click', function() {
+                currentPage = parseInt(this.getAttribute('data-index'));
+                updateCarousel();
+            });
+        });
+        
+        updateCarousel();
+    </script>
+</body>
+</html>

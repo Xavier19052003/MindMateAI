@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact MindMate AI - Get Support for Your Mental Wellness Journey</title>
+    <meta name="description" content="Reach out to MindMate AI for support, questions, or feedback. We're here to help you on your mental wellness journey with AI-powered tools and resources.">
+    <meta name="keywords" content="MindMate AI contact, mental health support, wellness app support, contact us, AI mental health help">
+    <meta name="author" content="MindMate AI">
+    <meta property="og:title" content="Contact MindMate AI - Mental Wellness Support">
+    <meta property="og:description" content="Get in touch with MindMate AI for support with our mental wellness tools and AI-powered resources.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mindmate.ai/contact">
+    <meta property="og:image" content="https://mindmate.ai/images/contact-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact MindMate AI">
+    <meta name="twitter:description" content="Reach out to MindMate AI for support with our mental wellness tools and resources.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Mobile menu styles */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #c2cea7;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .navbar ul.active {
+                display: flex;
+            }
+            
+            .navbar ul li {
+                margin: 10px 0;
+            }
+            
+            .navbar .cta {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+            
+            .navbar {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* ===== CONTACT HERO SECTION ===== */
+        .contact-hero {
+            position: relative;
+            padding: 100px 5%;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+        
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('Images/Contact_Page.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -2;
+        }
+        
+        .contact-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(74, 124, 89, 0.85); /* Semi-transparent overlay */
+            z-index: -1;
+        }
+        
+        .contact-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .contact-hero p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ===== CONTACT CONTAINER ===== */
+        .contact-container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 5%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        /* Contact Information Section */
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            background: #f0f4f0;
+            padding: 40px;
+            border-radius: 8px;
+        }
+        
+        .contact-info h2 {
+            color: #4a7c59;
+            margin-bottom: 25px;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+        
+        .contact-methods { margin-bottom: 30px; }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background: #f8faf9;
+        }
+        
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            background: #c2cea7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: #4a7c59;
+            font-size: 1.1rem;
+        }
+        
+        .contact-details h3 {
+            font-size: 1rem;
+            color: #4a7c59;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .contact-details p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-link {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: #c2cea7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4a7c59;
+            text-decoration: none;
+        }
+
+        /* Contact Form Section */
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+        }
+        
+        .contact-form h2 {
+            color: #4a7c59;
+            margin-bottom: 25px;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+        
+        .form-group { margin-bottom: 20px; }
+        
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #4a7c59;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #5d8aa8;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            padding: 14px 30px;
+            background: #5d8aa8;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* ===== MAP SECTION ===== */
+        .full-width-map {
+            width: 100%;
+            background-color: #f0f4f0;
+            padding: 40px 0 0 0;
+            margin: 0;
+            text-align: center;
+        }
+        
+        .full-width-map h2 {
+            color: #4a7c59;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .full-width-map p.description {
+            max-width: 700px;
+            margin: 0 auto 25px;
+            color: #5d8aa8;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .address-card {
+            display: inline-block;
+            background: #f8faf9;
+            padding: 20px 30px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .address-card i {
+            font-size: 1.3rem;
+            color: #5d8aa8;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .address-card p {
+            font-size: 1rem;
+            color: #4a7c59;
+            margin-bottom: 12px;
+        }
+        
+        .address-card a {
+            display: inline-block;
+            background: #5d8aa8;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .map-container {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+        
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .contact-container { flex-direction: column; }
+            .contact-info, .contact-form { width: 100%; }
+            .map-container {
+                height: 350px;
+            }
+            .contact-hero {
+                padding: 70px 5%;
+                min-height: 300px;
+            }
+            .contact-hero h1 {
+                font-size: 2.2rem;
+            }
+            .contact-hero p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .contact-hero {
+                padding: 50px 5%;
+                min-height: 250px;
+            }
+            .contact-hero h1 {
+                font-size: 1.8rem;
+            }
+            .contact-hero p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== NAVIGATION BAR ===== -->
+    <nav class="navbar">
+        <img src="Images/logo.png" alt="MindMate AI Logo" class="logo">
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="community.html">Community</a></li>
+        </ul>
+        <a href="product.html" class="cta">Chat To MindMate</a>
+    </nav>
+
+    <!-- ===== CONTACT HERO SECTION ===== -->
+    <section class="contact-hero">
+        <div class="contact-hero-content">
+            <h1>Get In Touch With MindMate AI</h1>
+            <p>We're here to help you on your mental wellness journey. Whether you have questions, need support, or want to provide feedback, our team is ready to assist you.</p>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <div class="contact-container">
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Our Location</h3>
+                        <p>14 Panfluit Street, Centurion, Gauteng, South Africa</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Phone Number</h3>
+                        <p>+27 12 345 6789</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email Address</h3>
+                        <p>support@mindmate.ai</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Working Hours</h3>
+                        <p>Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 1:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Select a subject</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="support">Technical Support</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="partnership">Partnership</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== MAP SECTION ===== -->
+    <div class="full-width-map">
+        <h2>Find Us Here</h2>
+        <p class="description">
+            Visit our physical office to meet the MindMate AI team in person. 
+            Whether for a quick consult or a demo session, we're here to guide 
+            you on your mental wellness journey.
+        </p>
+
+        <div class="address-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>14 Panfluit Street, Centurion, Gauteng, South Africa</p>
+            <a href="https://maps.google.com/?q=14+Panfluit+Street+Centurion" target="_blank">Get Directions</a>
+        </div>
+
+        <div class="map-container">
+            <iframe 
+                width="100%" 
+                height="100%" 
+                frameborder="0" 
+                scrolling="no" 
+                marginheight="0" 
+                marginwidth="0" 
+                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=14%20Panfluit%20street,%20centurion+(MindMate%20inc.)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                style="border: none;"
+                title="Google Maps location of MindMate AI office"
+                aria-label="Interactive map showing MindMate AI office location">
+            </iframe>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <p>&copy; 2025 MindMate AI</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/stadio_higher_ed/?hl=en" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com/stadio_highered?lang=en" target="_blank" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.facebook.com/STADIOHigherEducation/" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+        <p>Contact us at <a href="mailto:support@mindmate.ai">support@mindmate.ai</a></p>
+    </footer>
+
+    <!-- Mobile menu functionality -->
+    <script src="script.js"></script>
+
+</body>
+</html>

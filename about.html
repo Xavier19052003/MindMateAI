@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About MindMate AI - Your AI Mental Wellness Companion</title>
+    <meta name="description" content="Learn about MindMate AI's mission to transform mental wellness through AI-powered tools, CBT techniques, and accessible self-care support.">
+    <meta name="keywords" content="MindMate AI, mental wellness, AI chatbot, CBT therapy, about us, mental health app">
+    <meta name="author" content="MindMate AI">
+    <meta property="og:title" content="About MindMate AI - Mental Wellness Transformation">
+    <meta property="og:description" content="Discover how MindMate AI combines technology with compassion to make mental wellness accessible to everyone.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mindmate.ai/about">
+    <meta property="og:image" content="https://mindmate.ai/images/about-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About MindMate AI">
+    <meta name="twitter:description" content="AI-powered mental wellness support with CBT techniques and personalized care.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ===== ABOUT HERO SECTION ===== */
+        .about-hero {
+            padding: 80px 10%;
+            background-color: #f0f4f0;
+        }
+        
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .about-content {
+            background: white;
+            border-radius: 8px;
+            padding: 40px;
+        }
+        
+        .about-subtitle {
+            color: #5d8aa8;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .about-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #4a7c59;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        .about-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #4a7c59;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .about-image {
+            overflow: hidden;
+            height: 390px;
+            border-radius: 8px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ===== TEAM SECTION ===== */
+        .team {
+            padding: 80px 10%;
+            background: white;
+            text-align: center;
+        }
+        
+        .team h2 {
+            font-size: 2.2rem;
+            color: #4a7c59;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+        
+        .team-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .team-member {
+            background: #f0f4f0;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .team-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 25px;
+            border: 3px solid #4a7c59;
+        }
+        
+        .team-member h3 {
+            color: #4a7c59;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        
+        .team-role {
+            color: #5d8aa8;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .team-bio {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ===== PRODUCT SHOWCASE SECTION ===== */
+        .product-showcase {
+            padding: 80px 10%;
+            background: #f0f4f0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .showcase-content h2 {
+            font-size: 2.2rem;
+            color: #4a7c59;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .showcase-content p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+        
+        .feature-list {
+            list-style: none;
+        }
+        
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .feature-list i {
+            color: #5d8aa8;
+            font-size: 1.1rem;
+        }
+        
+        .showcase-image {
+            text-align: center;
+        }
+        
+        .showcase-image img {
+            max-width: 75%;
+            border-radius: 8px;
+        }
+
+        /* ===== MISSION SECTION ===== */
+        .mission {
+            padding: 80px 10%;
+            background: white;
+            text-align: center;
+        }
+        
+        .mission h2 {
+            font-size: 2.2rem;
+            color: #4a7c59;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+        
+        .mission-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .mission-card {
+            background: #f8f8f8;
+            border-radius: 8px;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .mission-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #4a7c59;
+            border-radius: 50%;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .mission-card h3 {
+            color: #4a7c59;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .mission-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 968px) {
+            .about-container, .product-showcase {
+                grid-template-columns: 1fr;
+            }
+            
+            .mission-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .team-grid {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-title, .team h2, .mission h2, .showcase-content h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== NAVIGATION BAR ===== -->
+    <nav class="navbar">
+        <img src="Images/logo.png" alt="MindMate AI Logo" class="logo">
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="community.html">Community</a></li>
+        </ul>
+        <a href="product.html" class="cta">Chat To MindMate</a>
+    </nav>
+
+    <!-- ===== ABOUT HERO SECTION ===== -->
+    <section class="about-hero">
+        <div class="about-container">
+            <div class="about-content">
+                <p class="about-subtitle">How It Started</p>
+                <h2 class="about-title">Our Vision for Mental Wellness Transformation</h2>
+                <p class="about-description">
+                    At MindMate AI, our vision is to redefine how people approach mental health by combining technology with compassion. We believe mental wellness should be accessible, engaging, and part of everyday life. That's why we use artificial intelligence to deliver personalized support through mood tracking, guided self-care, and CBT-based conversations. By transforming a static website into a dynamic, user-friendly space with fresh content, community features, and smart digital marketing, we aim to create a platform that not only supports individuals in managing stress and anxiety but also fosters long-term engagement, trust, and growth.
+                </p>
+            </div>
+            
+            <div>
+                <div class="about-image">
+                    <img src="Images/AboutPage.png" alt="MindMate AI Team collaborating on mental wellness solutions">
+                </div>
+                <br>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <p class="stat-number">3.5</p>
+                        <p class="stat-label">Years Experience</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-number">23</p>
+                        <p class="stat-label">Project Milestones</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-number">830+</p>
+                        <p class="stat-label">Positive Reviews</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-number">100K</p>
+                        <p class="stat-label">Active Users</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TEAM SECTION ===== -->
+    <section class="team">
+        <h2>Meet Our Founder</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="Images/EthanXavier.jpg" alt="Ethan Xavier Peters - Founder & CEO of MindMate AI" class="team-image">
+                <h3>Ethan Xavier Peters</h3>
+                <p class="team-role">Founder & CEO</p>
+                <p class="team-bio">Xavier is the founder and creative force behind MindMate AI, a Cape Town–based platform dedicated to transforming mental wellness through artificial intelligence. As a second-year IT student with a passion for technology and human wellbeing, Xavier envisioned a digital space where mental health support is accessible, affordable, and personalized. Drawing inspiration from Cognitive Behavioural Therapy, mindfulness practices, and the power of AI, Xavier designed MindMate AI to help students, remote workers, and professionals build healthier habits and emotional resilience. With a strong belief that innovation and empathy can coexist, Xavier's mission is to make self-care a natural part of daily life while breaking the stigma around mental health.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRODUCT SHOWCASE SECTION ===== -->
+    <section class="product-showcase">
+        <div class="showcase-content">
+            <h2>Your Personal Mental Wellness Companion</h2>
+            <p>
+                MindMate AI offers a suite of features including mood tracking, guided meditations, 
+                AI-powered CBT chats, and self-care recommendations. Our intuitive platform helps 
+                you stay mindful, productive, and emotionally balanced throughout your day.
+            </p>
+            
+            <ul class="feature-list">
+                <li><i class="fas fa-check-circle"></i> Personalized mental wellness plans</li>
+                <li><i class="fas fa-check-circle"></i> 24/7 AI-powered support</li>
+                <li><i class="fas fa-check-circle"></i> Progress tracking and insights</li>
+                <li><i class="fas fa-check-circle"></i> Customizable self-care routines</li>
+            </ul>
+        </div>
+        
+        <div class="showcase-image">
+            <img src="Images/Phone.png" alt="MindMate AI mobile app interface preview">
+        </div>
+    </section>
+
+    <!-- ===== MISSION SECTION ===== -->
+    <section class="mission">
+        <h2>Our Mission & Values</h2>
+        <div class="mission-cards">
+            <div class="mission-card">
+                <div class="mission-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>AI-Powered Support</h3>
+                <p>MindMate AI harnesses the power of artificial intelligence to deliver practical, evidence-based tools like CBT-powered conversations, mood tracking, and self-care guidance. Our mission is to make mental wellness smarter, more interactive, and tailored to each individual's needs.</p>
+            </div>
+            <div class="mission-card">
+                <div class="mission-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Compassionate Care</h3>
+                <p>Technology alone isn't enough and at the heart of MindMate AI is empathy. We believe in creating a safe, supportive space where users feel heard and valued, empowering them to take small but meaningful steps toward better mental health.</p>
+            </div>
+            <div class="mission-card">
+                <div class="mission-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>Global Accessibility</h3>
+                <p>Mental wellness should not be limited by cost, location, or stigma. MindMate AI is designed to be accessible anywhere, offering affordable digital support that brings care closer to people worldwide.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <p>&copy; 2025 MindMate AI</p>
+        
+        <div class="social-icons">
+            <a href="https://www.instagram.com/stadio_higher_ed/?hl=en" target="_blank" aria-label="Visit our Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com/stadio_highered?lang=en" target="_blank" aria-label="Visit our Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.facebook.com/STADIOHigherEducation/" target="_blank" aria-label="Visit our Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+        
+        <p>Contact us at <a href="mailto:support@mindmate.ai">support@mindmate.ai</a></p>
+    </footer>
+
+    <!-- Mobile menu functionality -->
+    <script src="script.js"></script>
+
+</body>
+</html>

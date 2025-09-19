@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MindMate AI Services - AI Therapy, Coaching & Wellness Programs</title>
+  <meta name="description" content="Discover MindMate AI's mental wellness features including CBT-powered chatbot, mood tracking, and guided meditations for better mental health.">
+  <meta name="keywords" content="MindMate AI, mental wellness, CBT therapy, mood tracker, AI chatbot, mental health app">
+  <meta name="author" content="MindMate AI">
+  <meta property="og:title" content="MindMate AI - AI-Powered Mental Wellness Tools">
+  <meta property="og:description" content="Smart, personalized mental wellness tools designed to guide you toward a balanced and healthier lifestyle.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mindmate.ai/product">
+  <meta property="og:image" content="https://mindmate.ai/images/product-og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MindMate AI - Mental Wellness Tools">
+  <meta name="twitter:description" content="AI-powered mental wellness tools with CBT techniques and mood tracking.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Mobile menu styles */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      .navbar ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #c2cea7;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar ul.active {
+        display: flex;
+      }
+
+      .navbar ul li {
+        margin: 10px 0;
+      }
+
+      .navbar .cta {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+
+      .navbar {
+        flex-wrap: wrap;
+      }
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      position: relative;
+      background: linear-gradient(
+          rgba(74, 124, 89, 0.6),
+          rgba(74, 124, 89, 0.6)
+        ),
+        url("Images/Services.png") center/cover no-repeat;
+      min-height: 350px;
+      padding: 100px 10%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+
+    /* ===== SERVICES SECTION ===== */
+    .services {
+      padding: 80px 10%;
+      background: white;
+      text-align: center;
+    }
+
+    .services h2 {
+      font-size: 2.2rem;
+      margin-bottom: 50px;
+      color: #4a7c59;
+      font-weight: 600;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background: #f0f4f0;
+      padding: 40px 30px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      background: #4a7c59;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: white;
+      font-size: 20px;
+    }
+
+    .service-card h3 {
+      color: #4a7c59;
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .service-card p {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* ===== SELF-CARE SECTION ===== */
+    .self-care {
+      padding: 80px 5%;
+      background: #f0f4f0;
+    }
+
+    .self-care-header {
+      text-align: center;
+      margin-bottom: 50px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .self-care-header h1 {
+      font-size: 2rem;
+      color: #4a7c59;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .self-care-header p {
+      color: #666;
+      margin: 0 auto 15px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .self-care-header ul {
+      text-align: left;
+      margin: 0 auto 20px;
+      color: #666;
+      max-width: 700px;
+    }
+
+    .self-care-header li {
+      margin-bottom: 8px;
+    }
+
+    /* Self-Care Cards */
+    .self-care-cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .self-care-card {
+      background: white;
+      border-radius: 8px;
+      padding: 25px;
+    }
+
+    .self-care-icon {
+      width: 45px;
+      height: 45px;
+      background: #4a7c59;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+      color: white;
+      font-size: 16px;
+    }
+
+    .self-care-card h2 {
+      color: #4a7c59;
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .self-care-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .self-care-card li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+      color: #333;
+      line-height: 1.4;
+      font-size: 0.95rem;
+    }
+
+    .self-care-card li:before {
+      content: "•";
+      color: #4a7c59;
+      position: absolute;
+      left: 0;
+    }
+
+    /* ===== MEDITATION SECTION ===== */
+    .meditations {
+      background: white;
+      padding: 80px 10%;
+      text-align: center;
+    }
+
+    .meditations h2 {
+      font-size: 2.2rem;
+      color: #4a7c59;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .meditations p {
+      max-width: 600px;
+      margin: 0 auto 40px;
+      color: #666;
+      font-size: 1.1rem;
+    }
+
+    .meditation-list {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    /* Meditation Categories */
+    .meditation-category {
+      background: #f8f8f8;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .category-header {
+      padding: 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #4a7c59;
+      color: white;
+    }
+
+    .category-header h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .meditation-items {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .meditation-items.active {
+      max-height: 1000px;
+    }
+
+    .meditation-item {
+      padding: 15px 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .meditation-item:last-child {
+      border-bottom: none;
+    }
+
+    .meditation-title {
+      font-weight: 500;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    /* Audio Player */
+    .audio-player {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .play-btn {
+      background: #4a7c59;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .progress-container {
+      flex-grow: 1;
+      background: #eee;
+      border-radius: 3px;
+      height: 6px;
+      cursor: pointer;
+    }
+
+    .progress {
+      background: #4a7c59;
+      border-radius: 3px;
+      height: 100%;
+      width: 0%;
+    }
+
+    .time {
+      font-size: 0.8rem;
+      color: #666;
+      min-width: 80px;
+      text-align: right;
+    }
+
+    .volume-control {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .volume-btn {
+      background: none;
+      border: none;
+      color: #666;
+      cursor: pointer;
+    }
+
+    .volume-slider {
+      width: 60px;
+      height: 4px;
+      border-radius: 2px;
+      outline: none;
+    }
+
+    /* ===== CALL TO ACTION SECTION ===== */
+    .cta-section {
+      padding: 80px 10%;
+      background: #4a7c59;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      color: white;
+      font-weight: 600;
+    }
+
+    .cta-section p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      color: #e8f5e9;
+      font-size: 1.1rem;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 14px 30px;
+      background: white;
+      color: #4a7c59;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* ===== CHATBOT ===== */
+    .chatbot {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 1000;
+    }
+
+    .chat-button {
+      width: 60px;
+      height: 60px;
+      background: #4a7c59;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: white;
+      font-size: 24px;
+    }
+
+    .chat-window {
+      position: absolute;
+      bottom: 70px;
+      left: 0;
+      width: 300px;
+      height: 400px;
+      background: white;
+      border-radius: 8px;
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid #ddd;
+    }
+
+    .chat-header {
+      background: #4a7c59;
+      color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chat-header h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .close-chat {
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .chat-messages {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .message {
+      max-width: 80%;
+      padding: 10px 15px;
+      border-radius: 18px;
+      font-size: 0.9rem;
+    }
+
+    .bot-message {
+      background: #f0f4f0;
+      color: #333;
+      align-self: flex-start;
+    }
+
+    .user-message {
+      background: #4a7c59;
+      color: white;
+      align-self: flex-end;
+    }
+
+    .chat-input {
+      display: flex;
+      padding: 10px;
+      border-top: 1px solid #eee;
+    }
+
+    .chat-input input {
+      flex: 1;
+      padding: 10px 15px;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      outline: none;
+    }
+
+    .chat-input button {
+      margin-left: 10px;
+      background: #4a7c59;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+
+    .chatbot.active .chat-window {
+      display: flex;
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 968px) {
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1.1rem;
+      }
+      .services h2,
+      .cta-section h2,
+      .self-care-header h1,
+      .meditations h2 {
+        font-size: 1.8rem;
+      }
+      /* Navbar adjustments */
+      .navbar ul {
+        display: none;
+      }
+      .navbar .cta {
+        margin-left: 0;
+      }
+      .self-care {
+        padding: 60px 4%;
+      }
+      .self-care-card {
+        padding: 20px;
+      }
+      .self-care-card h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== NAVIGATION BAR ===== -->
+  <nav class="navbar">
+    <img src="Images/logo.png" alt="MindMate AI Logo - Mental Wellness Solutions" class="logo" />
+    <div class="menu-toggle" id="mobile-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="product.html">Product</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="community.html">Community</a></li>
+    </ul>
+    <a href="product.html" class="cta">Chat To MindMate</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div>
+      <h1>Our Services</h1>
+      <p>Explore how MindMate AI helps you achieve mental wellness, balance, and productivity with our innovative AI-powered solutions.</p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services">
+    <h2>What We Offer</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-comments" aria-hidden="true"></i>
+        </div>
+        <h3>AI Therapy Chatbot</h3>
+        <p>Engage in CBT-powered conversations designed to reframe thoughts, improve mental health, and provide support anytime, anywhere.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-user-graduate" aria-hidden="true"></i>
+        </div>
+        <h3>Personalized Coaching</h3>
+        <p>Get tailored self-care plans and productivity routines to help you maintain a healthy balance in life and work.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-heart" aria-hidden="true"></i>
+        </div>
+        <h3>Wellness Programs</h3>
+        <p>Access guided meditations, stress relief exercises, and mood tracking tools to support daily mental wellness habits.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Self-Care Section -->
+  <section class="self-care">
+    <div class="self-care-header">
+      <h1>Why is self care important?</h1>
+      <p>Having an effective self-care routine has been shown to have a number of important health benefits. Some of these include:</p>
+      <ul>
+        <li>Reducing anxiety and depression</li>
+        <li>Reducing stress and improving resilience</li>
+        <li>Improving happiness</li>
+        <li>Increasing energy</li>
+        <li>Reducing burnout</li>
+        <li>Stronger interpersonal relationships</li>
+      </ul>
+      <p>According to the World Health Organization (WHO), self-care is important because it can help promote health, prevent disease, and help people better cope with illness.</p>
+    </div>
+
+    <div class="self-care-cards-container">
+      <div class="self-care-card">
+        <div class="self-care-icon">
+          <i class="fas fa-walking" aria-hidden="true"></i>
+        </div>
+        <h2>Physical Self-Care</h2>
+        <ul>
+          <li>Go for a 20–30 min walk or light exercise daily.</li>
+          <li>Drink enough water (aim for 6–8 glasses).</li>
+          <li>Stretch for 5 minutes after waking up and before bed.</li>
+          <li>Prioritise 7–9 hours of sleep.</li>
+          <li>Eat balanced meals and avoid too much processed food.</li>
+        </ul>
+      </div>
+
+      <div class="self-care-card">
+        <div class="self-care-icon">
+          <i class="fas fa-users" aria-hidden="true"></i>
+        </div>
+        <h2>Social Self-Care</h2>
+        <ul>
+          <li>Schedule a weekly catch-up with a friend or family member.</li>
+          <li>Join a group, club, or online community with shared interests.</li>
+          <li>Practice healthy boundaries—say "no" when you need to.</li>
+          <li>Celebrate small wins with loved ones.</li>
+          <li>Engage in meaningful conversations rather than just small talk.</li>
+        </ul>
+      </div>
+
+      <div class="self-care-card">
+        <div class="self-care-icon">
+          <i class="fas fa-brain" aria-hidden="true"></i>
+        </div>
+        <h2>Mental Self-Care</h2>
+        <ul>
+          <li>Limit screen time or social media scrolling.</li>
+          <li>Read a book, article, or listen to a podcast that stimulates your mind.</li>
+          <li>Break large tasks into smaller, manageable steps.</li>
+          <li>Practice mindfulness or meditation for at least 5 minutes daily.</li>
+          <li>Keep a journal to process your thoughts.</li>
+        </ul>
+      </div>
+
+      <div class="self-care-card">
+        <div class="self-care-icon">
+          <i class="fas fa-smile" aria-hidden="true"></i>
+        </div>
+        <h2>Emotional Self-Care</h2>
+        <ul>
+          <li>Practice daily gratitude—write down 3 things you're thankful for.</li>
+          <li>Allow yourself to feel and name your emotions without judgment.</li>
+          <li>Talk to a trusted friend, mentor, or counselor when overwhelmed.</li>
+          <li>Listen to music that uplifts or soothes you.</li>
+          <li>Take regular breaks when you notice stress building up.</li>
+        </ul>
+      </div>
+
+      <div class="self-care-card">
+        <div class="self-care-icon">
+          <i class="fas fa-spa" aria-hidden="true"></i>
+        </div>
+        <h2>Spiritual Self-Care</h2>
+        <ul>
+          <li>Spend quiet time in reflection, prayer, or meditation.</li>
+          <li>Connect with nature—go outside, breathe deeply, notice your surroundings.</li>
+          <li>Engage in activities that give you a sense of purpose or meaning.</li>
+          <li>Read or listen to spiritual/inspirational texts or podcasts.</li>
+          <li>Volunteer or do an act of kindness for someone else.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meditation Section with Audio Players -->
+  <section class="meditations">
+    <h2>Daily Meditations</h2>
+    <p>Select a category and choose a meditation to relax, focus, or recharge your mind.</p>
+
+    <div class="meditation-list">
+      <!-- Stress Relief Category -->
+      <div class="meditation-category">
+        <div class="category-header" onclick="toggleCategory('stress')">
+          <h3>Stress Relief</h3>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </div>
+        <div class="meditation-items" id="stress-items">
+          <div class="meditation-item">
+            <div class="meditation-title">2-Minute Breathing Exercise</div>
+            <div class="audio-player">
+              <button class="play-btn" data-src="Audio/2-Minute Breathing Excercise.mp3" aria-label="Play 2-Minute Breathing Exercise">
+                <i class="fas fa-play" aria-hidden="true"></i>
+              </button>
+              <div class="progress-container">
+                <div class="progress"></div>
+              </div>
+              <div class="time">0:00 / 0:00</div>
+              <div class="volume-control">
+                <button class="volume-btn" aria-label="Adjust volume">
+                  <i class="fas fa-volume-up" aria-hidden="true"></i>
+                </button>
+                <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1" aria-label="Volume control">
+              </div>
+            </div>
+          </div>
+          
+          <div class="meditation-item">
+            <div class="meditation-title">Mind Relaxation</div>
+            <div class="audio-player">
+              <button class="play-btn" data-src="Audio/Mind Relaxation.mp3" aria-label="Play Mind Relaxation">
+                <i class="fas fa-play" aria-hidden="true"></i>
+              </button>
+              <div class="progress-container">
+                <div class="progress"></div>
+              </div>
+              <div class="time">0:00 / 0:00</div>
+              <div class="volume-control">
+                <button class="volume-btn" aria-label="Adjust volume">
+                  <i class="fas fa-volume-up" aria-hidden="true"></i>
+                </button>
+                <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1" aria-label="Volume control">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Morning Boost Category -->
+      <div class="meditation-category">
+        <div class="category-header" onclick="toggleCategory('morning')">
+          <h3>Morning Boost</h3>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </div>
+        <div class="meditation-items" id="morning-items">
+          <div class="meditation-item">
+            <div class="meditation-title">Gratitude Meditation</div>
+            <div class="audio-player">
+              <button class="play-btn" data-src="Audio/Mindful Wake-up.mp3" aria-label="Play Gratitude Meditation">
+                <i class="fas fa-play" aria-hidden="true"></i>
+              </button>
+              <div class="progress-container">
+                <div class="progress"></div>
+              </div>
+              <div class="time">0:00 / 0:00</div>
+              <div class="volume-control">
+                <button class="volume-btn" aria-label="Adjust volume">
+                  <i class="fas fa-volume-up" aria-hidden="true"></i>
+                </button>
+                <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1" aria-label="Volume control">
+              </div>
+            </div>
+          </div>
+          
+          <!-- New Morning Boost Audio -->
+          <div class="meditation-item">
+            <div class="meditation-title">Positive Affirmations</div>
+            <div class="audio-player">
+              <button class="play-btn" data-src="Audio/Mindful Productivity.mp3" aria-label="Play Positive Affirmations">
+                <i class="fas fa-play" aria-hidden="true"></i>
+              </button>
+              <div class="progress-container">
+                <div class="progress"></div>
+              </div>
+              <div class="time">0:00 / 0:00</div>
+              <div class="volume-control">
+                <button class="volume-btn" aria-label="Adjust volume">
+                  <i class="fas fa-volume-up" aria-hidden="true"></i>
+                </button>
+                <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1" aria-label="Volume control">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sleep & Relaxation Category -->
+      <div class="meditation-category">
+        <div class="category-header" onclick="toggleCategory('sleep')">
+          <h3>Sleep & Relaxation</h3>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </div>
+        <div class="meditation-items" id="sleep-items">
+          <div class="meditation-item">
+            <div class="meditation-title">Deep Sleep Journey</div>
+            <div class="audio-player">
+              <button class="play-btn" data-src="Audio/Deep Sleep Journey.mp3" aria-label="Play Deep Sleep Journey">
+                <i class="fas fa-play" aria-hidden="true"></i>
+              </button>
+              <div class="progress-container">
+                <div class="progress"></div>
+              </div>
+              <div class="time">0:00 / 0:00</div>
+              <div class="volume-control">
+                <button class="volume-btn" aria-label="Adjust volume">
+                  <i class="fas fa-volume-up" aria-hidden="true"></i>
+                </button>
+                <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1" aria-label="Volume control">
+              </div>
+            </div>
+          </div>
+          
+          <!-- New Sleep & Relaxation Audio -->
+          <div class="meditation-item">
+            <div class="meditation-title">Clearing Your Thoughts</div>
+            <div class="audio-player">
+              <button class="play-btn" data-src="Audio/Clear Your Thoughts.mp3" aria-label="Play Clearing Your Thoughts">
+                <i class="fas fa-play" aria-hidden="true"></i>
+              </button>
+              <div class="progress-container">
+                <div class="progress"></div>
+              </div>
+              <div class="time">0:00 / 0:00</div>
+              <div class="volume-control">
+                <button class="volume-btn" aria-label="Adjust volume">
+                  <i class="fas fa-volume-up" aria-hidden="true"></i>
+                </button>
+                <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1" aria-label="Volume control">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="cta-section">
+    <h2>Ready to Get Started?</h2>
+    <p>Join thousands of users improving their mental wellness with MindMate AI. Start your journey today.</p>
+    <a href="contact.html" class="cta-btn">Contact Us</a>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <p>&copy; 2025 MindMate AI</p>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/stadio_higher_ed/?hl=en" target="_blank" aria-label="Visit our Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/stadio_highered?lang=en" target="_blank" aria-label="Visit our Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.facebook.com/STADIOHigherEducation/" target="_blank" aria-label="Visit our Facebook"><i class="fab fa-facebook-f"></i></a>
+    </div>
+    <p>Contact us at <a href="mailto:support@mindmate.ai">support@mindmate.ai</a></p>
+  </footer>
+
+  <!-- Chatbot Widget -->
+  <div class="chatbot">
+    <div class="chat-button" onclick="toggleChat()" aria-label="Open chat">
+      <i class="fas fa-comment-dots"></i>
+    </div>
+    <div class="chat-window">
+      <div class="chat-header">
+        <h3>MindMate Assistant</h3>
+        <button class="close-chat" onclick="toggleChat()" aria-label="Close chat">&times;</button>
+      </div>
+      <div class="chat-messages">
+        <div class="message bot-message">Hello! I'm here to help you book sessions. Type 'book a session' to get started.</div>
+      </div>
+      <div class="chat-input">
+        <input type="text" placeholder="Type 'book a session'..." onkeypress="handleEnter(event)" aria-label="Type your message">
+        <button onclick="sendMessage()" aria-label="Send message">Send</button>
+      </div>
+    </div>
+  </div>
+
+   <!-- Mobile menu functionality -->
+  <script src="script.js"></script>
+  <script>
+    // Global variables for audio control
+    let currentAudio = null;
+    let currentButton = null;
+
+    // Toggle meditation categories open/closed
+    function toggleCategory(categoryId) {
+      const items = document.getElementById(`${categoryId}-items`);
+      const header = document.querySelector(`[onclick="toggleCategory('${categoryId}')"]`);
+      
+      items.classList.toggle('active');
+      const icon = header.querySelector('i');
+      icon.style.transform = items.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+    }
+
+    // Initialize audio player functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const playButtons = document.querySelectorAll('.play-btn');
+      
+      playButtons.forEach(button => {
+        const audioSrc = button.getAttribute('data-src');
+        const player = button.closest('.audio-player');
+        const progress = player.querySelector('.progress');
+        const timeDisplay = player.querySelector('.time');
+        const progressContainer = player.querySelector('.progress-container');
+        const volumeSlider = player.querySelector('.volume-slider');
+        const volumeBtn = player.querySelector('.volume-btn');
+        
+        let audio = null;
+        
+        button.onclick = function() {
+          // If this is the current audio and playing, pause it
+          if (currentAudio && currentButton === button) {
+            if (!currentAudio.paused) {
+              currentAudio.pause();
+              button.innerHTML = '<i class="fas fa-play"></i>';
+              button.setAttribute('aria-label', 'Play ' + button.closest('.meditation-item').querySelector('.meditation-title').textContent);
+              return;
+            } else {
+              currentAudio.play();
+              button.innerHTML = '<i class="fas fa-pause"></i>';
+              button.setAttribute('aria-label', 'Pause ' + button.closest('.meditation-item').querySelector('.meditation-title').textContent);
+              return;
+            }
+          }
+          
+          // Stop current audio if different
+          if (currentAudio && currentButton !== button) {
+            currentAudio.pause();
+            currentButton.innerHTML = '<i class="fas fa-play"></i>';
+            currentButton.setAttribute('aria-label', 'Play ' + currentButton.closest('.meditation-item').querySelector('.meditation-title').textContent);
+          }
+          
+          // Create new audio if needed
+          if (!audio) {
+            audio = new Audio(audioSrc);
+            
+            // Set volume
+            audio.volume = volumeSlider.value;
+            
+            // Update progress
+            audio.ontimeupdate = function() {
+              if (audio.duration) {
+                const percent = (audio.currentTime / audio.duration) * 100;
+                progress.style.width = percent + '%';
+                timeDisplay.textContent = formatTime(audio.currentTime) + ' / ' + formatTime(audio.duration);
+              }
+            };
+            
+            // Reset when ended
+            audio.onended = function() {
+              button.innerHTML = '<i class="fas fa-play"></i>';
+              button.setAttribute('aria-label', 'Play ' + button.closest('.meditation-item').querySelector('.meditation-title').textContent);
+              progress.style.width = '0%';
+              timeDisplay.textContent = '0:00 / ' + formatTime(audio.duration);
+              currentAudio = null;
+              currentButton = null;
+            };
+            
+            // Update time display when loaded
+            audio.onloadedmetadata = function() {
+              timeDisplay.textContent = '0:00 / ' + formatTime(audio.duration);
+            };
+          }
+          
+          // Play audio
+          audio.play();
+          button.innerHTML = '<i class="fas fa-pause"></i>';
+          button.setAttribute('aria-label', 'Pause ' + button.closest('.meditation-item').querySelector('.meditation-title').textContent);
+          currentAudio = audio;
+          currentButton = button;
+        };
+        
+        // Progress bar click
+        progressContainer.onclick = function(e) {
+          if (audio && audio.duration) {
+            const rect = this.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const width = rect.width;
+            audio.currentTime = (clickX / width) * audio.duration;
+          }
+        };
+        
+        // Volume control
+        volumeSlider.oninput = function() {
+          if (audio) audio.volume = this.value;
+          updateVolumeIcon(this.value, volumeBtn);
+        };
+        
+        // Volume button toggle
+        volumeBtn.onclick = function() {
+          if (volumeSlider.value > 0) {
+            volumeSlider.value = 0;
+            if (audio) audio.volume = 0;
+            updateVolumeIcon(0, this);
+          } else {
+            volumeSlider.value = 1;
+            if (audio) audio.volume = 1;
+            updateVolumeIcon(1, this);
+          }
+        };
+      });
+    });
+
+    // Helper function to format time display
+    function formatTime(seconds) {
+      if (isNaN(seconds)) return '0:00';
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    }
+
+    // Update volume icon based on volume level
+    function updateVolumeIcon(value, button) {
+      if (value == 0) {
+        button.innerHTML = '<i class="fas fa-volume-mute"></i>';
+        button.setAttribute('aria-label', 'Unmute');
+      } else if (value < 0.5) {
+        button.innerHTML = '<i class="fas fa-volume-down"></i>';
+        button.setAttribute('aria-label', 'Volume down');
+      } else {
+        button.innerHTML = '<i class="fas fa-volume-up"></i>';
+        button.setAttribute('aria-label', 'Volume up');
+      }
+    }
+
+    // Simple chatbot functionality
+    function toggleChat() {
+      document.querySelector('.chatbot').classList.toggle('active');
+    }
+
+    function sendMessage() {
+      const input = document.querySelector('.chat-input input');
+      const message = input.value.trim();
+      if (message) {
+        addMessage(message, true);
+        input.value = '';
+        
+        setTimeout(() => {
+          const response = getResponse(message.toLowerCase());
+          addMessage(response, false);
+        }, 500);
+      }
+    }
+
+    function handleEnter(event) {
+      if (event.key === 'Enter') {
+        sendMessage();
+      }
+    }
+
+    function addMessage(text, isUser) {
+      const messagesContainer = document.querySelector('.chat-messages');
+      const messageDiv = document.createElement('div');
+      messageDiv.className = 'message ' + (isUser ? 'user-message' : 'bot-message');
+      messageDiv.textContent = text;
+      messagesContainer.appendChild(messageDiv);
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    function getResponse(input) {
+      if (input.includes('book a session')) {
+        return "Session booked! Head to our contact page to fill in your details and we'll get back to you.";
+      } else {
+        return "I'm here to help you book sessions. Please type 'book a session' to proceed.";
+      }
+    }
+  </script>
+</body>
+</html>

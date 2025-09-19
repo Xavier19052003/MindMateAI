@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindMate AI Blog - Mental Wellness Resources & Insights</title>
+    <meta name="description" content="Explore MindMate AI's blog for insights, tips, and resources on mental wellness, therapy techniques, and personal growth strategies.">
+    <meta name="keywords" content="MindMate AI blog, mental health articles, therapy insights, mindfulness, mental wellness resources">
+    <meta name="author" content="MindMate AI">
+    <meta property="og:title" content="MindMate AI Blog - Mental Wellness Resources">
+    <meta property="og:description" content="Insights, tips, and resources for mental wellness and personal growth">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mindmate.ai/blog">
+    <meta property="og:image" content="https://mindmate.ai/images/blog-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MindMate AI Blog">
+    <meta name="twitter:description" content="Insights, tips, and resources for mental wellness and personal growth">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Mobile menu styles */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #c2cea7;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .navbar ul.active {
+                display: flex;
+            }
+            
+            .navbar ul li {
+                margin: 10px 0;
+            }
+            
+            .navbar .cta {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+            
+            .navbar {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* ===== BLOG HEADER SECTION ===== */
+        .blog-header {
+            background: linear-gradient(rgba(74, 124, 89, 0.7), rgba(74, 124, 89, 0.7)), url('https://images.unsplash.com/photo-1518655048521-f130df041f66?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') center/cover no-repeat;
+            padding: 100px 3%;
+            text-align: center;
+            color: white;
+        }
+        
+        .blog-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .blog-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* ===== BLOG LAYOUT ===== */
+        .blog-container {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 40px;
+            padding: 60px 3%;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        /* ===== SIDEBAR SECTION ===== */
+        .sidebar {
+            background: #f0f4f0;
+            border-radius: 8px;
+            padding: 25px;
+            height: fit-content;
+        }
+        
+        .sidebar-section {
+            margin-bottom: 40px;
+        }
+        
+        .sidebar-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .sidebar-section h3 {
+            color: #4a7c59;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4a7c59;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .post-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .post-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .post-date {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .post-title {
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: #333;
+            font-size: 0.95rem;
+        }
+        
+        .post-author {
+            font-size: 0.85rem;
+            color: #4a7c59;
+        }
+        
+        .post-title a {
+            color: #4a7c59;
+            text-decoration: none;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .tag {
+            background-color: #4a7c59;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+
+        /* ===== BLOG POSTS SECTION ===== */
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            width: 100%;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #eee;
+            width: 100%;
+        }
+        
+        .card-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .card-content {
+            padding: 25px;
+        }
+        
+        .card-date {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+            line-height: 1.3;
+        }
+        
+        .card-excerpt {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        .card-author {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            background-color: #4a7c59;
+            border-radius: 50%;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .author-name {
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .read-more {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 20px;
+            background: #4a7c59;
+            color: white;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1200px) {
+            .blog-container {
+                grid-template-columns: 1fr 2.5fr;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .blog-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 40px 5%;
+            }
+            
+            .sidebar {
+                order: 2;
+            }
+            
+            .blog-posts {
+                order: 1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .blog-container {
+                padding: 40px 4%;
+            }
+            
+            .blog-header {
+                padding: 80px 4%;
+            }
+            
+            .blog-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .blog-header p {
+                font-size: 1.1rem;
+            }
+            
+            .blog-posts {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .blog-container {
+                padding: 30px 3%;
+            }
+            
+            .blog-header {
+                padding: 60px 3%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== NAVIGATION BAR ===== -->
+    <nav class="navbar">
+        <img src="Images/logo.png" alt="MindMate AI Logo" class="logo">
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="community.html">Community</a></li>
+        </ul>
+        <a href="product.html" class="cta">Chat To MindMate</a>
+    </nav>
+
+    <!-- ===== BLOG HEADER SECTION ===== -->
+    <header class="blog-header">
+        <h1>MindMate AI Blog</h1>
+        <p>Insights, tips, and resources for mental wellness and personal growth</p>
+    </header>
+
+    <!-- ===== BLOG CONTENT SECTION ===== -->
+    <div class="blog-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Latest Posts -->
+            <div class="sidebar-section">
+                <h3>LATEST POSTS</h3>
+                <div class="post-item">
+                    <div class="post-date">©Psychotherapy.net, 2025</div>
+                    <div class="post-title"><a href="https://www.psychotherapy.net/interview/roadmap-to-healing-family-estrangement">Coleman on the Roadmap to Healing Family Estrangement</a></div>
+                    <div class="post-author">by Lawrence Rubin</div>
+                </div>
+                <div class="post-item">
+                    <div class="post-date">©Psychotherapy.net, 2025</div>
+                    <div class="post-title"><a href="https://www.psychotherapy.net/article/therapeutic-reimagining">Reimagining</a></div>
+                    <div class="post-author">by Anthony Prendergast</div>
+                </div>
+                <div class="post-item">
+                    <div class="post-date">©2025, Psychotherapy.net</div>
+                    <div class="post-title"><a href="https://www.psychotherapy.net/article/redefining-strength-black-woman-healing">Strength: A Black Woman's Journey to Healing</a></div>
+                    <div class="post-author">by Brittany Washington</div>
+                </div>
+            </div>
+
+            <!-- Popular Tags -->
+            <div class="sidebar-section">
+                <h3>POPULAR TAGS</h3>
+                <div class="tags">
+                    <span class="tag">therapy</span>
+                    <span class="tag">mental health</span>
+                    <span class="tag">self-care</span>
+                    <span class="tag">mindfulness</span>
+                    <span class="tag">relationships</span>
+                    <span class="tag">DBT</span>
+                    <span class="tag">compassion</span>
+                    <span class="tag">listening</span>
+                    <span class="tag">spirituality</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Blog Posts -->
+        <main class="blog-posts">
+            <!-- Post 1 -->
+            <article class="blog-card">
+                <div class="card-img">
+                    <img src="Images/Post_1.png" alt="Therapy and Compassion">
+                </div>
+                <div class="card-content">
+                    <div class="card-date">April 16, 2025</div>
+                    <h2 class="card-title">Lessons in Tough Compassion and Male Resistance to Therapy</h2>
+                    <p class="card-excerpt">A therapist reflects on Good Will Hunting to explore how "tough compassion" can break through male resistance in therapy, emphasizing authenticity, empathy, and boundary-setting</p>
+                    <a href="https://www.psychotherapy.net/blog/title/lessons-in-tough-compassion-and-male-resistance-to-therapy" class="read-more">Read More</a>
+                    <div class="card-author">
+                        <div class="author-avatar">DB</div>
+                        <div class="author-name">Dan Bates</div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Post 2 -->
+            <article class="blog-card">
+                <div class="card-img">
+                    <img src="Images/Post_2.png" alt="DBT Therapy">
+                </div>
+                <div class="card-content">
+                    <div class="card-date">April 23, 2025</div>
+                    <h2 class="card-title">Becoming an Accidental DBT Therapist</h2>
+                    <p class="card-excerpt">A therapist recounts their unexpected journey into Dialectical Behavior Therapy (DBT), sharing how working with challenging clients—especially one named Sarah—transformed their practice and deepened their belief in DBT's power to build "a life worth living"</p>
+                    <a href="https://www.psychotherapy.net/blog/title/becoming-an-accidental-dbt-therapist" class="read-more">Read More</a>
+                    <div class="card-author">
+                        <div class="author-avatar">JC</div>
+                        <div class="author-name">Jerry Crimmins</div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Post 3 -->
+            <article class="blog-card">
+                <div class="card-img">
+                    <img src="Images/Post_3.png" alt="Active Listening">
+                </div>
+                <div class="card-content">
+                    <div class="card-date">April 30, 2025</div>
+                    <h2 class="card-title">Teaching Clients Active Listening Skills to Improve their Relationships</h2>
+                    <p class="card-excerpt">This article emphasizes the importance of teaching clients active listening skills to deepen relationships, outlining five key components—from genuine curiosity to emotional attunement and self-awareness—that make conversations more meaningful</p>
+                    <a href="https://www.psychotherapy.net/blog/title/teaching-clients-active-listening-skills-to-improve-their-relationships" class="read-more">Read More</a>
+                    <div class="card-author">
+                        <div class="author-avatar">MM</div>
+                        <div class="author-name">Maggie Mulqueen</div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Post 4 -->
+            <article class="blog-card">
+                <div class="card-img">
+                    <img src="Images/Post_4.png" alt="Spiritual Experience in Therapy">
+                </div>
+                <div class="card-content">
+                    <div class="card-date">March 26, 2025</div>
+                    <h2 class="card-title">Navigating the Landscape of Spiritual Experience in Therapy</h2>
+                    <p class="card-excerpt">This article explores how therapists can respectfully engage with clients' spiritual experiences—whether mystical, religious, or psychedelic—by creating a safe, open space for meaning-making, healing, and personal growth</p>
+                    <a href="https://www.psychotherapy.net/blog/title/navigating-the-landscape-of-spiritual-experience-in-therapy" class="read-more">Read More</a>
+                    <div class="card-author">
+                        <div class="author-avatar">LM</div>
+                        <div class="author-name">Lavinia Magliocco</div>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <!-- ===== FOOTER SECTION ===== -->
+    <footer class="footer">
+        <p>&copy; 2025 MindMate AI</p>
+        
+        <div class="social-icons">
+            <a href="https://www.instagram.com/stadio_higher_ed/?hl=en" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/stadio_highered?lang=en" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/STADIOHigherEducation/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        
+        <p>Contact us at <a href="mailto:support@mindmate.ai">support@mindmate.ai</a></p>
+    </footer>
+
+    <!-- Mobile menu functionality -->
+    <script src="script.js"></script>
+
+</body>
+</html>

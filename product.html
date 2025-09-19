@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindMate AI - AI-Powered Mental Wellness Tools & Features</title>
+  <meta name="description" content="Discover MindMate AI's mental wellness features including CBT-powered chatbot, mood tracking, and guided meditations for better mental health.">
+  <meta name="keywords" content="MindMate AI, mental wellness, CBT therapy, mood tracker, AI chatbot, mental health app">
+  <meta name="author" content="MindMate AI">
+  <meta property="og:title" content="MindMate AI - AI-Powered Mental Wellness Tools">
+  <meta property="og:description" content="Smart, personalized mental wellness tools designed to guide you toward a balanced and healthier lifestyle.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mindmate.ai/product">
+  <meta property="og:image" content="https://mindmate.ai/images/product-og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MindMate AI - Mental Wellness Tools">
+  <meta name="twitter:description" content="AI-powered mental wellness tools with CBT techniques and mood tracking.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Mobile menu styles */
+    @media (max-width: 768px) {
+        .menu-toggle {
+            display: flex;
+        }
+        
+        .navbar ul {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #c2cea7;
+            padding: 20px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar ul.active {
+            display: flex;
+        }
+        
+        .navbar ul li {
+            margin: 10px 0;
+        }
+        
+        .navbar .cta {
+            margin-left: 0;
+            margin-top: 10px;
+        }
+        
+        .navbar {
+            flex-wrap: wrap;
+        }
+    }
+
+    /* ===== PRODUCT BANNER ===== */
+    .product-banner {
+      position: relative;
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('Images/Product_banner.png') center/cover no-repeat;
+      text-align: center;
+      padding: 120px 10%;
+      color: white;
+      min-height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .product-banner h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    
+    .product-banner p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--text-light);
+    }
+
+    /* ===== FEATURES SECTION ===== */
+    .features {
+      padding: 80px 10%;
+      background: white;
+    }
+    
+    .features-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .heading-with-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    
+    .features-header h2 {
+      font-size: 2.2rem;
+      color: var(--primary-color);
+      margin-bottom: 0;
+      font-weight: 600;
+    }
+    
+    .features-header-image {
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+    }
+    
+    .features-header p {
+      color: var(--text-medium);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    
+    .feature-card {
+      background: var(--light-bg);
+      padding: 30px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: white;
+      font-size: 20px;
+    }
+    
+    .feature-card h3 {
+      color: var(--primary-color);
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+    
+    .feature-card p {
+      color: var(--text-medium);
+      line-height: 1.6;
+    }
+
+    /* ===== INTERACTIVE TOOLS SECTION ===== */
+    .interactive-tools {
+      padding: 80px 5%;
+      background: var(--light-bg);
+    }
+    
+    .tools-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .tools-header h2 {
+      font-size: 2.2rem;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    
+    .tools-header p {
+      color: var(--text-medium);
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+    
+    .tools-container {
+      display: flex;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .tool-column {
+      flex: 1;
+      min-width: 0;
+    }
+    
+    /* Chatbot Container */
+    .chatbot-container {
+      background: white;
+      border-radius: 8px;
+      padding: 30px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    
+    .chatbot-header {
+      margin-bottom: 20px;
+    }
+    
+    .chatbot-header h3 {
+      font-size: 1.6rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    
+    .chatbot-messages {
+      height: 300px;
+      overflow-y: auto;
+      background: #f8f8f8;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      text-align: left;
+      flex-grow: 1;
+    }
+    
+    .message {
+      margin-bottom: 15px;
+      padding: 10px 15px;
+      border-radius: 18px;
+      max-width: 80%;
+    }
+    
+    .bot-message {
+      background: var(--primary-color);
+      color: white;
+      margin-right: auto;
+    }
+    
+    .user-message {
+      background: var(--secondary-color);
+      color: white;
+      margin-left: auto;
+    }
+    
+    .chatbot-input {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .chatbot-input input {
+      flex: 1;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .chatbot-input button {
+      padding: 12px 20px;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    
+    .chatbot-input button:hover {
+      background: #3d6b4a;
+    }
+
+    /* Mood Tracker Container */
+    .mood-container {
+      background: white;
+      border-radius: 8px;
+      padding: 30px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    
+    .mood-header {
+      margin-bottom: 20px;
+    }
+    
+    .mood-header h3 {
+      font-size: 1.6rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    
+    .mood-card {
+      text-align: center;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    
+    .mood-card h4 {
+      margin-bottom: 20px;
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    
+    .mood-options {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .mood-btn {
+      font-size: 1.8rem;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.3s;
+    }
+    
+    .mood-btn:hover {
+      transform: scale(1.1);
+    }
+    
+    .mood-card textarea {
+      width: 100%;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      margin-bottom: 20px;
+      resize: none;
+      font-family: inherit;
+      font-size: 1rem;
+      min-height: 100px;
+    }
+    
+    .save-btn {
+      padding: 12px 24px;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      align-self: center;
+      transition: background 0.3s;
+    }
+    
+    .save-btn:hover {
+      background: #3d6b4a;
+    }
+
+    /* ===== PRICING PREVIEW SECTION ===== */
+    .pricing-preview {
+      background: white;
+      text-align: center;
+      padding: 80px 10%;
+    }
+    
+    .pricing-preview h2 {
+      font-size: 2.2rem;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    
+    .pricing-preview p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      font-size: 1.1rem;
+      color: var(--text-medium);
+      line-height: 1.6;
+    }
+    
+    .pricing-preview a {
+      display: inline-block;
+      padding: 14px 30px;
+      background: var(--primary-color);
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    
+    .pricing-preview a:hover {
+      background: #3d6b4a;
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 1024px) {
+      .tools-container {
+        flex-direction: column;
+        gap: 30px;
+      }
+      
+      .tool-column {
+        width: 100%;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .product-banner {
+        padding: 80px 5%;
+        min-height: 400px;
+      }
+      
+      .product-banner h1 {
+        font-size: 2.2rem;
+      }
+      
+      .features-header h2,
+      .tools-header h2,
+      .pricing-preview h2 {
+        font-size: 1.8rem;
+      }
+      
+      .heading-with-image {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .features-header-image {
+        width: 180px;
+        height: 180px;
+      }
+      
+      .features,
+      .interactive-tools,
+      .pricing-preview {
+        padding: 60px 5%;
+      }
+      
+      .chatbot-messages {
+        height: 250px;
+      }
+
+      .mood-options {
+        flex-wrap: wrap;
+      }
+      
+      .tools-header p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== NAVIGATION BAR ===== -->
+  <nav class="navbar">
+    <img src="Images/logo.png" alt="MindMate AI Logo" class="logo">
+    <div class="menu-toggle" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="product.html">Product</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="community.html">Community</a></li>
+    </ul>
+    <a href="product.html" class="cta">Chat To MindMate</a>
+  </nav>
+
+  <!-- ===== PRODUCT BANNER ===== -->
+  <section class="product-banner">
+    <h1>Discover MindMate AI</h1>
+    <p>Smart, personalized mental wellness tools designed to guide you toward a balanced and healthier lifestyle.</p>
+  </section>
+
+  <!-- ===== FEATURES SECTION ===== -->
+  <section class="features">
+    <div class="features-header">
+      <div class="heading-with-image">
+        <h2>What Do You Get with Mindmate?</h2>
+        <img src="Images/AI_Image.png" alt="AI Icon" class="features-header-image">
+      </div>
+      <p>MindMate AI offers a suite of features designed to support your mental wellness journey.</p>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-brain"></i>
+        </div>
+        <h3>CBT-Powered Chat</h3>
+        <p>Evidence-based Cognitive Behavioral Therapy techniques integrated into our AI conversations.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3>Mood Tracking</h3>
+        <p>Monitor your emotional patterns and gain insights into your mental wellbeing over time.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-spa"></i>
+        </div>
+        <h3>Guided Meditations</h3>
+        <p>Access a library of guided meditations for stress relief and mental clarity.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INTERACTIVE TOOLS SECTION ===== -->
+  <section class="interactive-tools" id="interactive-tools">
+    <div class="tools-header">
+      <h2>Experience Our Tools</h2>
+      <p>Engage with our AI chatbot for mental wellness support and track your daily mood patterns</p>
+    </div>
+    
+    <div class="tools-container">
+      <!-- Chatbot Column -->
+      <div class="tool-column">
+        <div class="chatbot-container">
+          <div class="chatbot-header">
+            <h3>Talk to MindMate AI</h3>
+            <p>Our CBT-powered chatbot is here to help you with mental wellness support</p>
+          </div>
+          
+          <div class="chatbot-messages">
+            <div class="message bot-message">Hello! I'm MindMate, your AI wellness assistant. How are you feeling today?</div>
+          </div>
+          
+          <div class="chatbot-input">
+            <input type="text" placeholder="Type your message here..." aria-label="Chat message input">
+            <button id="chat-send">Send</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Mood Tracker Column -->
+      <div class="tool-column">
+        <div class="mood-container">
+          <div class="mood-header">
+            <h3>Track Your Mood</h3>
+            <p>Log how you're feeling each day and reflect on your mental wellness journey</p>
+          </div>
+          
+          <div class="mood-card">
+            <h4>How are you feeling today?</h4>
+            <div class="mood-options">
+              <button class="mood-btn" aria-label="Sad mood">😔</button>
+              <button class="mood-btn" aria-label="Neutral mood">😐</button>
+              <button class="mood-btn" aria-label="Happy mood">🙂</button>
+              <button class="mood-btn" aria-label="Very happy mood">😄</button>
+              <button class="mood-btn" aria-label="Excited mood">🤩</button>
+            </div>
+
+            <textarea placeholder="Write a quick note about your day..." aria-label="Mood journal entry"></textarea>
+            
+            <button class="save-btn">Save Mood</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING PREVIEW SECTION ===== -->
+  <section class="pricing-preview">
+    <h2>Plans & Pricing</h2>
+    <p>Choose from flexible plans designed to meet your needs, whether you're looking for 
+       a free starter package or full access to all features.</p>
+    <a href="pricing.html">View Pricing</a>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>&copy; 2025 MindMate AI</p>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/stadio_higher_ed/?hl=en" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/stadio_highered?lang=en" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.facebook.com/STADIOHigherEducation/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    </div>
+    <p>Contact us at <a href="mailto:support@mindmate.ai">support@mindmate.ai</a></p>
+  </footer>
+
+  <!-- Mobile menu functionality -->
+  <script src="script.js"></script>
+  <script>
+
+    // Chatbot functionality
+    const chatInput = document.querySelector('.chatbot-input input');
+    const sendButton = document.getElementById('chat-send');
+    const chatMessages = document.querySelector('.chatbot-messages');
+    
+    // Predefined responses for the chatbot
+    const responses = {
+      greeting: ["Hello! How can I help you today?", "Hi there! How are you feeling?", "Hello! I'm here to support your mental wellness."],
+      stress: ["Stress is a common experience. Try taking deep breaths - inhale for 4 seconds, hold for 4, exhale for 6.", "When feeling stressed, try a quick mindfulness exercise. Focus on your senses - what can you see, hear, and feel right now?"],
+      anxiety: ["Anxiety can feel overwhelming. Remember to ground yourself in the present moment.", "For anxiety, try the 5-4-3-2-1 technique: identify 5 things you can see, 4 you can touch, 3 you can hear, 2 you can smell, and 1 you can taste."],
+      sad: ["It's okay to feel sad sometimes. Would you like to try a mood-boosting activity?", "I'm sorry you're feeling down. Remember that emotions are temporary, and it's okay to not be okay."],
+      sleep: ["Good sleep is crucial for mental health. Try maintaining a consistent sleep schedule.", "For better sleep, avoid screens an hour before bed and create a relaxing bedtime routine."],
+      default: ["I'm here to listen. Could you tell me more about how you're feeling?", "Thank you for sharing. How has that been affecting your day?", "I understand. Would you like to explore some coping strategies together?"]
+    };
+    
+    // Function to get a response based on user input
+    function getResponse(input) {
+      const lowerInput = input.toLowerCase();
+      
+      if (lowerInput.includes('hello') || lowerInput.includes('hi') || lowerInput.includes('hey')) {
+        return responses.greeting[Math.floor(Math.random() * responses.greeting.length)];
+      } else if (lowerInput.includes('stress') || lowerInput.includes('overwhelm') || lowerInput.includes('stressed')) {
+        return responses.stress[Math.floor(Math.random() * responses.stress.length)];
+      } else if (lowerInput.includes('anxious') || lowerInput.includes('anxiety') || lowerInput.includes('worry')) {
+        return responses.anxiety[Math.floor(Math.random() * responses.anxiety.length)];
+      } else if (lowerInput.includes('sad') || lowerInput.includes('depress') || lowerInput.includes('unhappy')) {
+        return responses.sad[Math.floor(Math.random() * responses.sad.length)];
+      } else if (lowerInput.includes('sleep') || lowerInput.includes('tired') || lowerInput.includes('insomnia')) {
+        return responses.sleep[Math.floor(Math.random() * responses.sleep.length)];
+      } else {
+        return responses.default[Math.floor(Math.random() * responses.default.length)];
+      }
+    }
+    
+    // Function to add a message to the chat
+    function addMessage(text, isUser = false) {
+      const messageDiv = document.createElement('div');
+      messageDiv.classList.add('message');
+      messageDiv.classList.add(isUser ? 'user-message' : 'bot-message');
+      messageDiv.textContent = text;
+      chatMessages.appendChild(messageDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+    
+    // Function to handle sending a message
+    function handleSend() {
+      const message = chatInput.value.trim();
+      if (message) {
+        addMessage(message, true);
+        chatInput.value = '';
+        
+        // Simulate thinking delay
+        setTimeout(() => {
+          const response = getResponse(message);
+          addMessage(response);
+        }, 1000);
+      }
+    }
+    
+    // Event listeners
+    sendButton.onclick = handleSend;
+    chatInput.onkeypress = function(e) {
+      if (e.key === 'Enter') {
+        handleSend();
+      }
+    };
+    
+    // Mood tracker functionality
+    const moodButtons = document.querySelectorAll('.mood-btn');
+    const moodTextarea = document.querySelector('.mood-card textarea');
+    const saveButton = document.querySelector('.save-btn');
+    
+    moodButtons.forEach(button => {
+      button.onclick = function() {
+        moodButtons.forEach(btn => btn.style.transform = 'scale(1)');
+        this.style.transform = 'scale(1.2)';
+        this.style.backgroundColor = '#3d6b4a';
+      };
+    });
+    
+    saveButton.onclick = function() {
+      const selectedMood = document.querySelector('.mood-btn[style*="scale(1.2)"]');
+      const note = moodTextarea.value;
+      
+      if (selectedMood) {
+        alert(`Mood saved: ${selectedMood.textContent}\nNote: ${note || 'No note added'}`);
+        moodTextarea.value = '';
+        moodButtons.forEach(btn => {
+          btn.style.transform = 'scale(1)';
+          btn.style.backgroundColor = '#4a7c59';
+        });
+      } else {
+        alert('Please select a mood first');
+      }
+    };
+  </script>
+</body>
+</html>

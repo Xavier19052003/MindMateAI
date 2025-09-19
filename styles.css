@@ -1,0 +1,144 @@
+ /* ===== GLOBAL STYLES ===== */
+        :root {
+          --primary-color: #4a7c59;
+          --secondary-color: #5d8aa8;
+          --light-bg: #f0f4f0;
+          --text-dark: #333;
+          --text-medium: #666;
+          --text-light: #f0f0f0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: #c2cea7;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            height: 40px;
+            margin-right: auto;
+        }
+        
+        .navbar ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        
+        .navbar a {
+            text-decoration: none;
+            color: #163849;
+            font-weight: 500;
+        }
+        
+        .navbar .cta {
+            padding: 8px 16px;
+            background: #007bff;
+            color: #fff;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-left: 40px;
+        }
+
+        /* Mobile menu toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            height: 3px;
+            width: 100%;
+            background-color: #163849;
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+
+        /* Mobile menu styles */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #c2cea7;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .navbar ul.active {
+                display: flex;
+            }
+            
+            .navbar ul li {
+                margin: 10px 0;
+            }
+            
+            .navbar .cta {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+            
+            .navbar {
+                flex-wrap: wrap;
+            }
+        }
+      
+        /* Footer */
+        .footer {
+            background: #4a7c59;
+            color: white;
+            padding: 50px 10% 30px;
+            text-align: center;
+        }
+        
+        .footer a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        
+        .footer p {
+            margin-bottom: 15px;
+        }
+        
+        .social-icons {
+            margin: 20px 0;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            line-height: 35px;
+            margin: 0 8px;
+        }

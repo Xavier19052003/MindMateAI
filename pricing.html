@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindMate AI Pricing - Affordable Mental Wellness Plans</title>
+    <meta name="description" content="Choose from MindMate AI's affordable pricing plans. Free, Plus, and Team options with CBT exercises, mood tracking, and meditation sessions.">
+    <meta name="keywords" content="MindMate AI pricing, mental wellness plans, CBT therapy cost, meditation app pricing, affordable mental health">
+    <meta name="author" content="MindMate AI">
+    <meta property="og:title" content="MindMate AI Pricing - Mental Wellness Plans">
+    <meta property="og:description" content="Affordable pricing plans for AI-powered mental wellness tools including CBT, mood tracking, and meditation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mindmate.ai/pricing">
+    <meta property="og:image" content="https://mindmate.ai/images/pricing-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MindMate AI Pricing">
+    <meta name="twitter:description" content="Affordable mental wellness plans with CBT, mood tracking, and meditation.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Mobile menu styles */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #c2cea7;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .navbar ul.active {
+                display: flex;
+            }
+            
+            .navbar ul li {
+                margin: 10px 0;
+            }
+            
+            .navbar .cta {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+            
+            .navbar {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* ===== PRICING HERO SECTION ===== */
+        .pricing-hero {
+            background-color: #f0f4f0;
+            padding: 60px 5%;
+            text-align: center;
+        }
+        
+        .pricing-hero h1 {
+            font-size: 2.5rem;
+            color: #4a7c59;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .pricing-hero p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: #5d8aa8;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        /* Billing Toggle Styles */
+        .billing-toggle {
+            display: flex;
+            justify-content: center;
+            background: white;
+            border-radius: 8px;
+            padding: 4px;
+            width: 280px;
+            margin: 0 auto 40px;
+        }
+        
+        .billing-option {
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            color: #666;
+            flex: 1;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .billing-option.active {
+            background: #5d8aa8;
+            color: white;
+        }
+        
+        /* Pricing Cards Container */
+        .pricing-cards {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        /* Individual Pricing Card */
+        .pricing-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .pricing-card.popular {
+            border: 2px solid #5d8aa8;
+        }
+        
+        /* Popular Badge - Centered */
+        .popular-badge {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #5d8aa8;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-align: center;
+            width: max-content;
+        }
+        
+        .pricing-card h3 {
+            font-size: 1.4rem;
+            color: #4a7c59;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .pricing-card .description {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .price-container {
+            background: #f0f4f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        
+        .price-amount {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #4a7c59;
+            margin-bottom: 5px;
+        }
+        
+        .price-interval {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .features-list {
+            list-style: none;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        
+        .features-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: #333;
+        }
+        
+        .features-list i {
+            color: #5d8aa8;
+            font-size: 1rem;
+        }
+        
+        .pricing-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            text-align: center;
+            background: #4a7c59;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            border: none;
+        }
+        
+        .pricing-btn.outline {
+            background: white;
+            border: 1px solid #4a7c59;
+            color: #4a7c59;
+        }
+
+        /* ===== PRICING COMPARISON SECTION ===== */
+        .pricing-comparison {
+            padding: 60px 5%;
+            background: white;
+        }
+        
+        .pricing-comparison h2 {
+            font-size: 1.8rem;
+            color: #4a7c59;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .comparison-container {
+            overflow-x: auto;
+            margin: 0 auto;
+            max-width: 800px;
+            border-radius: 8px;
+            background: white;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table thead th {
+            background: #f0f4f0;
+            color: #4a7c59;
+            font-weight: 600;
+        }
+        
+        .comparison-table thead th:first-child {
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .comparison-table thead th.popular {
+            background: #5d8aa8;
+            color: white;
+            position: relative;
+        }
+        
+        .popular-label {
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #5d8aa8;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            text-align: center;
+            width: max-content;
+        }
+        
+        .comparison-table tbody tr:nth-child(even) {
+            background: #f0f4f0;
+        }
+        
+        .comparison-table tbody td:first-child {
+            text-align: left;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .feature-name {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .feature-name i {
+            color: #5d8aa8;
+            font-size: 1rem;
+            width: 20px;
+        }
+        
+        .tick-icon { color: #4a7c59; font-size: 1.1rem; }
+        .cross-icon { color: #dc3545; font-size: 1.1rem; }
+        .value-text { font-weight: 500; color: #4a7c59; }
+
+        /* ===== FAQ SECTION ===== */
+        .faq {
+            padding: 60px 5%;
+            background: #f0f4f0;
+        }
+        
+        .faq h2 {
+            font-size: 1.8rem;
+            color: #4a7c59;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .faq-items {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            background: white;
+        }
+        
+        .faq-item summary {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 500;
+            color: #4a7c59;
+            list-style: none;
+        }
+        
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        .faq-answer {
+            padding: 0 20px 20px 20px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ===== BOOKING CTA SECTION ===== */
+        .booking {
+            padding: 60px 5%;
+            text-align: center;
+            background: #4a7c59;
+            color: white;
+        }
+        
+        .booking h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .booking p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 25px;
+            color: #e8f5e9;
+        }
+        
+        .booking-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: white;
+            color: #4a7c59;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .pricing-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .pricing-cards { 
+                flex-direction: column; 
+                align-items: center; 
+            }
+            
+            .pricing-card { 
+                width: 100%; 
+                max-width: 350px; 
+            }
+            
+            .billing-toggle { 
+                width: 100%; 
+                max-width: 280px; 
+            }
+            
+            .comparison-table { 
+                font-size: 0.9rem; 
+            }
+            
+            .comparison-table th, 
+            .comparison-table td { 
+                padding: 10px 8px; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== NAVIGATION BAR ===== -->
+    <nav class="navbar">
+        <img src="Images/logo.png" alt="MindMate AI Logo" class="logo">
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="community.html">Community</a></li>
+        </ul>
+        <a href="product.html" class="cta">Chat To MindMate</a>
+    </nav>
+
+    <!-- ===== PRICING HERO SECTION ===== -->
+    <section class="pricing-hero">
+        <h1>AI mental wellness made affordable</h1>
+        <p>Pricing plans for every budget and need</p>
+        
+        <!-- Billing Toggle - Centered Text -->
+        <div class="billing-toggle">
+            <div class="billing-option active">Monthly billing</div>
+            <div class="billing-option">Yearly billing (Save 20%)</div>
+        </div>
+        
+        <!-- Pricing Cards -->
+        <div class="pricing-cards">
+            <!-- Free Plan -->
+            <div class="pricing-card">
+                <h3>Free</h3>
+                <p class="description">Basic tools to get started with MindMate AI</p>
+                
+                <div class="price-container">
+                    <div class="price-amount">R0</div>
+                    <div class="price-interval">per month</div>
+                </div>
+                
+                <ul class="features-list">
+                    <li><i class="fas fa-check-circle"></i> Basic CBT exercises</li>
+                    <li><i class="fas fa-check-circle"></i> 7-day mood tracking</li>
+                    <li><i class="fas fa-check-circle"></i> 5 guided meditations</li>
+                    <li><i class="fas fa-check-circle"></i> Community support</li>
+                </ul>
+                
+                <a href="#" class="pricing-btn outline">Current Plan</a>
+            </div>
+            
+            <!-- Plus Plan - Most Popular -->
+            <div class="pricing-card popular">
+                <div class="popular-badge">Most Popular</div>
+                <h3>Plus</h3>
+                <p class="description">Unlock full features including advanced insights</p>
+                
+                <div class="price-container">
+                    <div class="price-amount">R59</div>
+                    <div class="price-interval">per month</div>
+                </div>
+                
+                <ul class="features-list">
+                    <li><i class="fas fa-check-circle"></i> All Free features</li>
+                    <li><i class="fas fa-check-circle"></i> Unlimited CBT exercises</li>
+                    <li><i class="fas fa-check-circle"></i> 30-day mood history</li>
+                    <li><i class="fas fa-check-circle"></i> 20+ guided meditations</li>
+                    <li><i class="fas fa-check-circle"></i> Priority support</li>
+                </ul>
+                
+                <a href="#" class="pricing-btn">Try Plus</a>
+            </div>
+            
+            <!-- Team Plan -->
+            <div class="pricing-card">
+                <h3>Team</h3>
+                <p class="description">For organizations and educational institutions</p>
+                
+                <div class="price-container">
+                    <div class="price-amount">Custom</div>
+                    <div class="price-interval">volume pricing</div>
+                </div>
+                
+                <ul class="features-list">
+                    <li><i class="fas fa-check-circle"></i> All Plus features</li>
+                    <li><i class="fas fa-check-circle"></i> Group analytics dashboard</li>
+                    <li><i class="fas fa-check-circle"></i> Admin management tools</li>
+                    <li><i class="fas fa-check-circle"></i> Dedicated account manager</li>
+                    <li><i class="fas fa-check-circle"></i> Custom integration options</li>
+                </ul>
+                
+                <a href="#" class="pricing-btn outline">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRICING COMPARISON SECTION ===== -->
+    <section class="pricing-comparison">
+        <h2>Compare Plans</h2>
+        <div class="comparison-container">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Features</th>
+                        <th>Free</th>
+                        <th class="popular">Plus
+                            <span class="popular-label"><br>Most Popular</span>
+                        </th>
+                        <th>Team</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="feature-name">
+                                <i class="fas fa-brain"></i>
+                                <span>CBT Exercises</span>
+                            </div>
+                        </td>
+                        <td><span class="value-text">Basic</span></td>
+                        <td><i class="fas fa-check-circle tick-icon"></i> <span class="value-text">Unlimited</span></td>
+                        <td><i class="fas fa-check-circle tick-icon"></i> <span class="value-text">Unlimited</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="feature-name">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Mood Tracking</span>
+                            </div>
+                        </td>
+                        <td><span class="value-text">7 Days</span></td>
+                        <td><span class="value-text">30 Days</span></td>
+                        <td><span class="value-text">30 Days + Group Analytics</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="feature-name">
+                                <i class="fas fa-headset"></i>
+                                <span>Support</span>
+                            </div>
+                        </td>
+                        <td><span class="value-text">Community</span></td>
+                        <td><span class="value-text">Priority</span></td>
+                        <td><span class="value-text">Dedicated Manager</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="feature-name">
+                                <i class="fas fa-meditation"></i>
+                                <span>Guided Meditations</span>
+                            </div>
+                        </td>
+                        <td><span class="value-text">5 Sessions</span></td>
+                        <td><i class="fas fa-check-circle tick-icon"></i> <span class="value-text">20+ Sessions</span></td>
+                        <td><i class="fas fa-check-circle tick-icon"></i> <span class="value-text">Unlimited</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="feature-name">
+                                <i class="fas fa-users"></i>
+                                <span>User Accounts</span>
+                            </div>
+                        </td>
+                        <td><span class="value-text">1</span></td>
+                        <td><span class="value-text">1</span></td>
+                        <td><i class="fas fa-check-circle tick-icon"></i> <span class="value-text">Multiple</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="feature-name">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>Analytics Dashboard</span>
+                            </div>
+                        </td>
+                        <td><i class="fas fa-times-circle cross-icon"></i></td>
+                        <td><i class="fas fa-check-circle tick-icon"></i></td>
+                        <td><i class="fas fa-check-circle tick-icon"></i> <span class="value-text">Advanced</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="feature-name">
+                                <i class="fas fa-lock"></i>
+                                <span>Data Encryption</span>
+                            </div>
+                        </td>
+                        <td><i class="fas fa-check-circle tick-icon"></i></td>
+                        <td><i class="fas fa-check-circle tick-icon"></i></td>
+                        <td><i class="fas fa-check-circle tick-icon"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ===== FAQ SECTION ===== -->
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-items">
+            <details class="faq-item">
+                <summary>Can I cancel anytime?</summary>
+                <div class="faq-answer">
+                    Yes, you're in control. You can cancel your subscription at any time with no hidden fees or penalties. Once cancelled, you'll still have access to the platform until the end of your billing cycle.
+                </div>
+            </details>
+            
+            <details class="faq-item">
+                <summary>Is there a free trial?</summary>
+                <div class="faq-answer">
+                    Absolutely! We offer a 7-day free trial so you can explore MindMate AI's features all the way from mood tracking to our CBT-powered chatbot and before committing to a paid plan.
+                </div>
+            </details>
+            
+            <details class="faq-item">
+                <summary>Do you offer student discounts?</summary>
+                <div class="faq-answer">
+                    Yes, we do. Students can enjoy reduced pricing to make mental wellness tools more affordable and accessible. All you need is a valid student ID to qualify.
+                </div>
+            </details>
+            
+            <details class="faq-item">
+                <summary>What payment methods do you accept?</summary>
+                <div class="faq-answer">
+                    We accept major credit and debit cards, as well as secure online payment options. Our checkout is encrypted to ensure your details remain safe.
+                </div>
+            </details>
+            
+            <details class="faq-item">
+                <summary>How do I upgrade my plan?</summary>
+                <div class="faq-answer">
+                    Upgrading is simple. Log into your account, go to "Account Settings," and select the plan that best fits your needs. Your new features will be activated immediately.
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- ===== BOOKING CTA SECTION ===== -->
+    <section class="booking">
+        <h2>Need a Custom Plan?</h2>
+        <p>Contact our team to design a package that fits your needs.</p>
+        <a href="mailto:bookings@mindmate.ai" class="booking-btn">Book a Consultation</a>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <p>&copy; 2025 MindMate AI</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/stadio_higher_ed/?hl=en" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com/stadio_highered?lang=en" target="_blank" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.facebook.com/STADIOHigherEducation/" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+        <p>Contact us at <a href="mailto:support@mindmate.ai">support@mindmate.ai</a></p>
+    </footer>
+
+    <!-- Mobile menu functionality -->
+    <script src="script.js"></script>
+    <script>
+        // Billing toggle functionality
+        const billingOptions = document.querySelectorAll('.billing-option');
+        
+        billingOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                billingOptions.forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+                
+                const priceElements = document.querySelectorAll('.price-amount');
+                if (this.textContent.includes('Yearly')) {
+                    priceElements[1].textContent = 'R47';
+                } else {
+                    priceElements[1].textContent = 'R59';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
